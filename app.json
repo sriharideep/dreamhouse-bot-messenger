@@ -1,6 +1,6 @@
 {
   "name": "DreamHouse Bot for Messenger",
-  "description": "Salesforce-powered Bot for Messenger in the DreamHouse sample app",
+  "description": "Salesforce-powered Bot",
   "env": {
     "FB_PAGE_TOKEN": {
       "description": "Facebook Messenger Access Token",
