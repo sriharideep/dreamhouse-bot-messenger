@@ -9,7 +9,7 @@ var express = require('express'),
     FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN,
     app = express();
 
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 8020);
 
 app.use(bodyParser.json());
 
@@ -53,6 +53,6 @@ app.post('/webhook', (req, res) => {
     res.sendStatus(200);
 });
 
-app.listen(app.get('port'), function () {
+app.listen(app.get('8200'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
