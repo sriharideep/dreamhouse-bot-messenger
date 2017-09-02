@@ -2,29 +2,19 @@
 
 let nforce = require('nforce'),
 
-    SF_CLIENT_ID = process.env.SF_CLIENT_ID,
-    SF_CLIENT_SECRET = process.env.SF_CLIENT_SECRET,
-    SF_USER_NAME = process.env.SF_USER_NAME,
-    SF_PASSWORD = process.env.SF_PASSWORD;
-
-let org = nforce.createConnection({
-    clientId: SF_CLIENT_ID,
-    clientSecret: SF_CLIENT_SECRET,
-    redirectUri: 'http://localhost:3000/oauth/_callback',
-    mode: 'multi',
-    autoRefresh: true
+var org = nforce.createConnection({
+  clientId: '3MVG9g9rbsTkKnAVqCOPKskVT93FhJ1Sh9BvPea.5vH6ezw7FAgBShuKgTIA0ZBD8GMnDSe51S3eWC278JbBf',
+  clientSecret: '833058913634631924',
+  redirectUri: 'http://facebook.com'
 });
 
-let login = () => {
-    org.authenticate({username: SF_USER_NAME, password: SF_PASSWORD}, err => {
-        if (err) {
-            console.error("Authentication error");
-            console.error(err);
-        } else {
-            console.log("Authentication successful");
-        }
-    });
+
+let login = () => { org.authenticate({ username: 'sribot@gmail.com', password: 'Welcome1'}, function(err, resp){
+  // the oauth object was stored in the connection object
+  if(!err) console.log('Cached Token: ' + org.oauth.access_token)
+});
 };
+
 
 let findProperties = (params) => {
     let where = "";
